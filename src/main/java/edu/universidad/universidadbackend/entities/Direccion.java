@@ -5,7 +5,7 @@ import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 
 
-@Embeddable //Anotacíón que me indica que esta clase no va aser una entidad sino un objeto o embebida dentro de otra
+@Embeddable //Anotacíón que me indica que esta clase no va a ser una entidad sino un objeto o embebida dentro de otra
 public class Direccion implements Serializable {
 
     private String calle;

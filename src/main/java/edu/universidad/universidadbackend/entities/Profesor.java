@@ -26,6 +26,7 @@ public class Profesor extends Persona {
     )
     private Set<Carrera> carreras;
 
+
     public Profesor() {
     }
 
@@ -45,6 +46,7 @@ public class Profesor extends Persona {
     public Set<Carrera> getCarreras() {
         return carreras;
     }
+
 
     public void setCarreras(Set<Carrera> carreras) {
         this.carreras = carreras;

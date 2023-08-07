@@ -9,6 +9,7 @@ public class Alumno extends Persona { //Le ponemos extends para indicar que esta
     // clase Persona y la clase heredada no es necesario que la serialicemos
 
 
+
     @ManyToOne(
             optional = true,
             cascade = {
