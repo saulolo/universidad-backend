@@ -6,7 +6,9 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-
+/* ORDEN DE LA ARQUITECTURA DL BACK
+    1. entities y enums -> 2. repositories -> 3. services (1. contracts -> 2. implementations) -> 4. controller (o imprimir por consola)
+* */
 
 /*SINGLE.TABLE: una única tabla con todos los atributos de nuestras clases hijas, tiene mejor rendimiento ya
 que esta en una tabla lo único malo es que los atributos de las clases hijas tienen que permitir valores nulos

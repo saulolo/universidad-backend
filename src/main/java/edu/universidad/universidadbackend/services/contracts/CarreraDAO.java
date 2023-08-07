@@ -9,6 +9,9 @@ public interface CarreraDAO {
     El patrón DAO: nos ayuda a separar la lógica de negocio de la lógica de acceso a datos, lo que facilita
     la mantenibilidad y la escalabilidad de la aplicación. Además, proporciona una abstracción que nos permite
     cambiar la capa de persistencia sin afectar el resto del código.
+
+    Nota: Orden de generación: 1. se genera los Contracts/DAO, en este caso el CarreraDAO,AlumnoDAO, etc
+    y por segunndo se generan los implementations//DAOImpl, e neste caso CarreraDAOImpl,AlumnoDAOImpl, r
 */
 
     //En general, el uso de Optional es una buena práctica en Java para mejorar la legibilidad, evitar errores

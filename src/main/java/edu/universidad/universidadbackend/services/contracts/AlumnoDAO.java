@@ -1,7 +1,6 @@
 package edu.universidad.universidadbackend.services.contracts;
 
-import edu.universidad.universidadbackend.entities.Alumno;
-import edu.universidad.universidadbackend.entities.Carrera;
+
 import edu.universidad.universidadbackend.entities.Persona;
 
 import java.util.Optional;
