@@ -10,6 +10,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class UniversidadBackendApplication {
 
@@ -34,11 +36,15 @@ public class UniversidadBackendApplication {
 	public CommandLineRunner runner() {
 		return args -> {
 			//Para que no quede tan grande el constructor, genero una variable con direccion y la llamo en el constructor de alumno
-			Direccion direccion =  new Direccion("Calle la jeta", "#65", "1455", "Antioquia", "2", "Calatrava");
-			Persona alumno = new Alumno(null, "Saul", "Echeverri", "784357745", direccion);
+/*			Direccion direccion =  new Direccion("La Palma", "#98", "1221", "Antioquia", "1", "Belen");
+			Persona alumno = new Alumno(null, "Alejandra", "Arenas", "43546678", direcciong);
 
 			Persona save = alumnoDAO.save(alumno);
-			System.out.println(save.toString());
+			System.out.println(save.toString());*/
+
+			//Método para ver por consola la persistencia de alumnos
+			List<Persona> alumnos = (List<Persona>) alumnoDAO.findAll();//Retorna un iterable según nuestro método
+			alumnos.forEach(System.out::println); //asi imprimimos con expresión lambda
 		};
 	}
 
