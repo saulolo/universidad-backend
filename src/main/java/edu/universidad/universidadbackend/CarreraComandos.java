@@ -29,12 +29,30 @@ public class CarreraComandos implements CommandLineRunner {
         System.out.println(saveSof.toString());
         System.out.println(saveAlim.toString());*/
 
+        Carrera carrera = null;
         Optional<Carrera> oCarrera = carreraDAO.findById(1L); //oCarrera para identificar que es un optional
         if (oCarrera.isPresent()) {
-            Carrera carrera = oCarrera.get();
+            carrera = oCarrera.get();
             System.out.println(carrera.toString());
         } else {
             System.out.println("Carrera bi encontrada");
         }
+
+        carrera.setCantidadMaterias(65);
+        carrera.setCantidadAnios(6);
+
+        carreraDAO.save(carrera);
+
+        System.out.println(carreraDAO.findById(1L).orElse(new Carrera()).toString());
+
+
+        carreraDAO.deleteById(1L);
+        System.out.println(carreraDAO.findById(1L).orElse(new Carrera()).toString());
+
+
+        /*CRUD DESDE Carrera Comandos*/
+
     }
+
+
 }

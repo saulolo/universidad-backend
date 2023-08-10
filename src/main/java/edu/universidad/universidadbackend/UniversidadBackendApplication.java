@@ -15,8 +15,8 @@ import java.util.List;
 @SpringBootApplication
 public class UniversidadBackendApplication {
 
-	@Autowired
-	private AlumnoDAO alumnoDAO;
+/*	@Autowired
+	private AlumnoDAO alumnoDAO;*/ //La comentamos porque ya vamos a relizar un CRUD a la BD
 
 	//agregamos getBeanDefinitionNames nos retona un arreglo de beans definidos (Alumno, Empleado, etc)
 	//esto para poder imprimir por consola los objetos creados
@@ -32,20 +32,20 @@ public class UniversidadBackendApplication {
 
 	//Otro metodo para imprimir los Beans creados en la misma clase del main y no generar una clase
 	// AlumnoComandos como lo hicimos con CarreraComanods
-	@Bean
+	/*@Bean
 	public CommandLineRunner runner() {
 		return args -> {
 			//Para que no quede tan grande el constructor, genero una variable con direccion y la llamo en el constructor de alumno
-/*			Direccion direccion =  new Direccion("La Palma", "#98", "1221", "Antioquia", "1", "Belen");
+*//*			Direccion direccion =  new Direccion("La Palma", "#98", "1221", "Antioquia", "1", "Belen");
 			Persona alumno = new Alumno(null, "Alejandra", "Arenas", "43546678", direcciong);
 
 			Persona save = alumnoDAO.save(alumno);
-			System.out.println(save.toString());*/
+			System.out.println(save.toString());*//*
 
 			//Método para ver por consola la persistencia de alumnos
-/*			List<Persona> alumnos = (List<Persona>) alumnoDAO.findAll();//Retorna un iterable según nuestro método
-			alumnos.forEach(System.out::println); //asi imprimimos con expresión lambda*/
+*//*			List<Persona> alumnos = (List<Persona>) alumnoDAO.findAll();//Retorna un iterable según nuestro método
+			alumnos.forEach(System.out::println); //asi imprimimos con expresión lambda*//*
 		};
-	}
+	}*///La comentamos porque ya vamos hacer un CRUD a BD
 
 }
