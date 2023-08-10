@@ -4,24 +4,10 @@ import edu.universidad.universidadbackend.entities.Persona;
 
 import java.util.Optional;
 
-public interface PersonaDAO {
+public interface PersonaDAO extends GenericDAO<Persona>{
 
-    //Hacemos un refactor ya que todos los metodos que herean los hijos son de persona
+    //Hacemos un refactor ya que todos los metodos que heredan los hijos son de persona ne nustro generico DAO
 
-    /* -- VER TODAS LAS PERSONAS -- */
-    Iterable<Persona> findAll();
-
-
-    /* -- VER PERSONA POR ID -- */
-    Optional<Persona> findById(Long id);
-
-
-    /* -- GUARDAR PERSONA -- */
-    Persona save(Persona persona);
-
-
-    /* -- ELIMINAR PERSONA POR ID -- */
-    void deleteById(Long id);
 
 
 

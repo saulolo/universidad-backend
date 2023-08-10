@@ -43,8 +43,8 @@ public class UniversidadBackendApplication {
 			System.out.println(save.toString());*/
 
 			//Método para ver por consola la persistencia de alumnos
-			List<Persona> alumnos = (List<Persona>) alumnoDAO.findAll();//Retorna un iterable según nuestro método
-			alumnos.forEach(System.out::println); //asi imprimimos con expresión lambda
+/*			List<Persona> alumnos = (List<Persona>) alumnoDAO.findAll();//Retorna un iterable según nuestro método
+			alumnos.forEach(System.out::println); //asi imprimimos con expresión lambda*/
 		};
 	}
 

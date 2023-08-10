@@ -1,10 +1,13 @@
 package edu.universidad.universidadbackend;
 
 
+import edu.universidad.universidadbackend.entities.Carrera;
 import edu.universidad.universidadbackend.services.contracts.CarreraDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.util.Optional;
 
 //Se creó esta clase para probar el service de Carrera ya que al momento no teniamos implementación web aún
 
@@ -25,5 +28,13 @@ public class CarreraComandos implements CommandLineRunner {
         Carrera saveAlim = carreraDAO.save(IngAlimentos);
         System.out.println(saveSof.toString());
         System.out.println(saveAlim.toString());*/
+
+        Optional<Carrera> oCarrera = carreraDAO.findById(1L); //oCarrera para identificar que es un optional
+        if (oCarrera.isPresent()) {
+            Carrera carrera = oCarrera.get();
+            System.out.println(carrera.toString());
+        } else {
+            System.out.println("Carrera bi encontrada");
+        }
     }
 }

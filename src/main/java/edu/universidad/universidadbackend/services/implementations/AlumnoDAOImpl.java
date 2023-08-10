@@ -12,34 +12,10 @@ import java.util.Optional;
 
 
 @Service
-public class AlumnoDAOImpl implements AlumnoDAO {
+public class AlumnoDAOImpl extends GenericDAOImpl<Persona, PersonaRepository > implements AlumnoDAO {
 
-    @Autowired   //@Qualifier("repositortioAlumnos"): asi lo hubiera inyectado si hubira renombrado mi ALumnoRopository
-    private PersonaRepository personaRepository;
-
-    @Override
-    @Transactional(readOnly = true)
-    public Iterable<Persona> findAll() {
-        return personaRepository.findAll();
+    @Autowired
+    public AlumnoDAOImpl(PersonaRepository repository) { //@Qualifier("repositortioAlumnos"): asi lo hubiera inyectado si hubira renombrado mi ALumnoRopository
+        super(repository);
     }
-
-    @Override
-    @Transactional(readOnly = true)
-    public Optional<Persona> findById(Long id) {
-        return personaRepository.findById(id);
-    }
-
-    @Override
-    @Transactional
-    public Persona save(Persona persona) {
-        return personaRepository.save(persona);
-    }
-
-    @Override
-    @Transactional
-    public void deleteById(Long id) {
-        personaRepository.deleteById(id);
-
-    }
-
 }
