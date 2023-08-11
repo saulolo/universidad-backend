@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 //Se creó esta clase para probar el service de Carrera ya que al momento no teniamos implementación web aún
@@ -22,37 +23,40 @@ public class CarreraComandos implements CommandLineRunner {
     private CarreraDAO carreraDAO; //Inyecto el DAO
     @Override
     public void run(String... args) throws Exception { //Metodo para instanciar el objeto y probar
-       /* Carrera IngSoftware = new Carrera(null, "Ingeniería de Software", 50, 5);
+        //Instanciamos objetos de carreras
+/*        Carrera IngSoftware = new Carrera(null, "Ingeniería de Software", 60, 5);
         Carrera IngAlimentos = new Carrera(null, "Ingeniería de Alimentos", 55, 5);
-        Carrera saveSof = carreraDAO.save(IngSoftware);
-        Carrera saveAlim = carreraDAO.save(IngAlimentos);
-        System.out.println(saveSof.toString());
-        System.out.println(saveAlim.toString());*/
+        Carrera IngIndustrial = new Carrera(null, "Ingeniería Industrial", 55, 5);
+        Carrera IngElectronica = new Carrera(null, "Ingeniería Electrónica", 45, 5);
+        Carrera licSistemas = new Carrera(null, "Licenciatura en Sistemas", 40, 4);
+        Carrera licTurismo = new Carrera(null, "Licenciatura en Turismo", 42, 4);
+        Carrera licYoga = new Carrera(null, "Licenciatura en Yoga", 25, 3);
+        Carrera licRecursos = new Carrera(null, "Licenciatura en Recursos Humanos - RRHH", 33, 3);
 
-        Carrera carrera = null;
-        Optional<Carrera> oCarrera = carreraDAO.findById(1L); //oCarrera para identificar que es un optional
-        if (oCarrera.isPresent()) {
-            carrera = oCarrera.get();
-            System.out.println(carrera.toString());
-        } else {
-            System.out.println("Carrera bi encontrada");
-        }
-
-      /*  carrera.setCantidadMaterias(65);
-        carrera.setCantidadAnios(6);
-
-        carreraDAO.save(carrera);
-
-        System.out.println(carreraDAO.findById(1L).orElse(new Carrera()).toString());
+        carreraDAO.save(IngSoftware);
+        carreraDAO.save(IngAlimentos);
+        carreraDAO.save(IngIndustrial);
+        carreraDAO.save(IngElectronica);
+        carreraDAO.save(licSistemas);
+        carreraDAO.save(licTurismo);
+        carreraDAO.save(licYoga);
+        carreraDAO.save(licRecursos);*/
 
 
-        carreraDAO.deleteById(1L);
-        System.out.println(carreraDAO.findById(1L).orElse(new Carrera()).toString());
+        //Método para listar carreras
+         List<Carrera> carreraList = (List<Carrera>) carreraDAO.findCarrerasByNombreContains("Sistemas");
+         carreraList.forEach(System.out::println);
+
+        //Método para listar carreras por conincidencia y sin importar mayus o minus
+         List<Carrera> carreraListUpper = (List<Carrera>) carreraDAO.findCarrerasByNombreContainsIgnoreCase("lic");
+         carreraListUpper.forEach(System.out::println);
+
+        //Método para listar carreras mayores a 4 años
+         List<Carrera> carreraListByAnios = (List<Carrera>) carreraDAO.findCarrerasByCantidadAniosAfter(4);
+         carreraListByAnios.forEach(System.out::println);
 
 
-        *//*CRUD DESDE Carrera Comandos*/
 
     }
-
 
 }

@@ -9,6 +9,13 @@ import java.util.Optional;
 public interface CarreraDAO extends GenericDAO<Carrera>{
 
 
+    Iterable<Carrera> findCarrerasByNombreContains(String nombre);
+
+    Iterable<Carrera> findCarrerasByNombreContainsIgnoreCase(String nombre);
+
+    Iterable<Carrera> findCarrerasByCantidadAniosAfter(Integer cantidadAnios);
+
+
 
 
 }

@@ -17,15 +17,15 @@ public interface PersonaRepository extends JpaRepository<Persona, Long> {
 
                             /*BUSQUEDAS DE JPQL*/
 
-    //Buscar por nombre y apellido
+    //Buscar por nombre y apellido (a travez de Query nativas)
     @Query("select p from Persona p where p.nombre = ?1 and p.apellido = ?2")
     Optional<Persona> findByNombreYApellido(String nombre, String apellido);
 
-    //Buscar por Dni
+    //Buscar por Dni (a travez de Query nativas)
     @Query("select p from Persona p where p.dni = ?1")
     Optional<Persona> findByDni(String dni);
 
-    //Buscar personas por apellido  //like % (es para que encuentre las coincidencias)
+    //Buscar personas por apellido  //like % (es para que encuentre las coincidencias) (a travez de Query nativas)
     @Query("select p from Persona p where p.apellido like %?1%")
     Iterable<Persona> findPersonaByApellido(String apellido);
 }

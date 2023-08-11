@@ -11,7 +11,9 @@ import org.springframework.stereotype.Repository;
 public interface AlumnoRepository extends PersonaRepository {
 
 
-    //Buscar alumnos por nombre de carrera
+                        /*BUSQUEDAS DE JPQL*/
+
+    //Buscar alumnos por nombre de carrera (a travez de Query nativas)
     @Query("select a from Persona a where a.carrera.nombre = ?1")
     Iterable<Persona> findAlumnoByNombreCarrera(String nombre);
 }
