@@ -2,6 +2,7 @@ package edu.universidad.universidadbackend.services.implementations;
 
 
 import edu.universidad.universidadbackend.entities.Persona;
+import edu.universidad.universidadbackend.repositories.AlumnoRepository;
 import edu.universidad.universidadbackend.repositories.PersonaRepository;
 import edu.universidad.universidadbackend.services.contracts.AlumnoDAO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +13,15 @@ import java.util.Optional;
 
 
 @Service
-public class AlumnoDAOImpl extends GenericDAOImpl<Persona, PersonaRepository > implements AlumnoDAO {
+public class AlumnoDAOImpl extends PersonaDAOImpl implements AlumnoDAO {
 
     @Autowired
     public AlumnoDAOImpl(PersonaRepository repository) { //@Qualifier("repositortioAlumnos"): asi lo hubiera inyectado si hubira renombrado mi ALumnoRopository
         super(repository);
+    }
+
+    @Override
+    public Iterable<Persona> findAlumnoByNombreCarrera(String nombre) {
+        return ((AlumnoRepository)repository).findAlumnoByNombreCarrera(nombre);
     }
 }

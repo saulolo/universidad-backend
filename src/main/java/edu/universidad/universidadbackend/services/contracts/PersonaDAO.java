@@ -9,6 +9,16 @@ public interface PersonaDAO extends GenericDAO<Persona>{
     //Hacemos un refactor ya que todos los metodos que heredan los hijos son de persona ne nustro generico DAO
 
 
+    /*BUSQUEDAS DE JPQL*/
 
+    //Buscar por nombre y apellido
+    Optional<Persona> findByNombreYApellido(String nombre, String apellido);
 
+    //Buscar por Dni
+    Optional<Persona> findByDni(String dni);
+
+    //Buscar personas por apellido
+    Iterable<Persona> findPersonaByApellido(String apellido);
 }
+
+

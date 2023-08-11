@@ -38,7 +38,7 @@ public class CarreraComandos implements CommandLineRunner {
             System.out.println("Carrera bi encontrada");
         }
 
-        carrera.setCantidadMaterias(65);
+      /*  carrera.setCantidadMaterias(65);
         carrera.setCantidadAnios(6);
 
         carreraDAO.save(carrera);
@@ -50,7 +50,7 @@ public class CarreraComandos implements CommandLineRunner {
         System.out.println(carreraDAO.findById(1L).orElse(new Carrera()).toString());
 
 
-        /*CRUD DESDE Carrera Comandos*/
+        *//*CRUD DESDE Carrera Comandos*/
 
     }
 
