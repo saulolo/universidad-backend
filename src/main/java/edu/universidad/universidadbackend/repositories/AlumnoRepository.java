@@ -14,6 +14,7 @@ public interface AlumnoRepository extends PersonaRepository {
                         /*BUSQUEDAS DE JPQL*/
 
     //Buscar alumnos por nombre de carrera (a travez de Query nativas)
-    @Query("select a from Persona a where a.carrera.nombre = ?1")
+    //Join fetch es por la carga peresosa
+    @Query("select a from Alumno a join fetch a.carrera c where c.nombre = ?1")
     Iterable<Persona> findAlumnoByNombreCarrera(String nombre);
 }

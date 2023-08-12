@@ -52,8 +52,10 @@ public class CarreraComandos implements CommandLineRunner {
          carreraListUpper.forEach(System.out::println);
 
         //Método para listar carreras mayores a 4 años
+/*
          List<Carrera> carreraListByAnios = (List<Carrera>) carreraDAO.findCarrerasByCantidadAniosAfter(4);
          carreraListByAnios.forEach(System.out::println);
+*/
 
 
 
