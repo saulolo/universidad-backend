@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
 
 
 @Transactional //Como este servicio trabaja con transacciones contra BD, debemos de decorarlos con esta anotación, y que derive de SpringFramework y no de jakarta
@@ -36,5 +35,11 @@ public class CarreraDAOImpl extends GenericDAOImpl <Carrera, CarreraRepository> 
     @Transactional(readOnly = true)
     public Iterable<Carrera> findCarrerasByCantidadAniosAfter(Integer cantidadAnios) {
         return repository.findCarrerasByCantidadAniosAfter(cantidadAnios);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Iterable<Carrera> findCarrerasByProfesorNombreYApellido(String nombre, String apellido) {
+        return repository.findCarrerasByProfesorNombreYApellido(nombre, apellido);
     }
 }

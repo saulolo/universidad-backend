@@ -15,6 +15,9 @@ public interface CarreraDAO extends GenericDAO<Carrera>{
 
     Iterable<Carrera> findCarrerasByCantidadAniosAfter(Integer cantidadAnios);
 
+    Iterable<Carrera> findCarrerasByProfesorNombreYApellido(String nombre, String apellido);
+
+
 
 
 

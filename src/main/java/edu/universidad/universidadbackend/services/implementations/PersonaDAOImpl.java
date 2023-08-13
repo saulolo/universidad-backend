@@ -10,6 +10,7 @@ import java.util.Optional;
 public class PersonaDAOImpl extends GenericDAOImpl <Persona, PersonaRepository> implements PersonaDAO {
 
 
+
     public PersonaDAOImpl(PersonaRepository repository) {
         super(repository);
     }
