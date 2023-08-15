@@ -25,7 +25,7 @@ public interface CarreraRepository extends JpaRepository<Carrera, Long> {
 
 
     //Buscar Carrera por profesor por nombre y apellido
-    @Query("select c from Carrera c where c.profesores = (select p from Profesor p where p.nombre = ?1 and p.apellido = ?2)")
+    @Query("select c from Carrera c join c.profesores p where p.nombre = ?1 and p.apellido = ?2")
     Iterable<Carrera> findCarrerasByProfesorNombreYApellido(String nombre, String apellido);
 
 

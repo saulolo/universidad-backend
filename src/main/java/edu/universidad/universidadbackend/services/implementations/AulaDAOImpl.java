@@ -34,6 +34,6 @@ public class AulaDAOImpl extends GenericDAOImpl<Aula, AulaRepository> implements
     @Override
     @Transactional(readOnly = true)
     public Aula findAulaByNumero(int nroAula) {
-        return repository.findAulaByNumero(nroAula);
+        return repository.findAulaByNroAula(nroAula);
     }
 }

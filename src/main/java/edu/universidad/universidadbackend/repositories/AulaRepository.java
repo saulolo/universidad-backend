@@ -24,6 +24,6 @@ public interface AulaRepository extends JpaRepository<Aula, Long> {
 
     //Buscar Aula por numero de aula
     //@Query("select a from Aula a where a.nroAula = ?1")
-    Aula findAulaByNumero(int nroAula);
+    Aula findAulaByNroAula(Integer nroAula);
 
 }
