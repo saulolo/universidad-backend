@@ -5,6 +5,7 @@ import edu.universidad.universidadbackend.entities.Alumno;
 import edu.universidad.universidadbackend.entities.Empleado;
 import edu.universidad.universidadbackend.entities.Persona;
 import edu.universidad.universidadbackend.entities.Profesor;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -33,6 +34,7 @@ class PersonaRepositoryTest {
 
 
     @Test
+    @DisplayName("Probando el método de Buscar por nombre y apellido")
     void findByNombreYApellido() {
         //Given
         Persona personaSave = empleadoRepository.save(DataDummy.empleado01());
@@ -45,7 +47,9 @@ class PersonaRepositoryTest {
         assertThat(expected.get()).isEqualTo(personaSave);
     }
 
+
     @Test
+    @DisplayName("Probando el método de Buscar por Dni")
     void findByDni() {
         //Given
         Persona personaSave = profesorRepository.save(DataDummy.profesor01());
@@ -60,6 +64,7 @@ class PersonaRepositoryTest {
     }
 
     @Test
+    @DisplayName("Probando el método de Buscar Personas por apellido")
     void findPersonaByApellido() {
         //Given
         Iterable<Persona> personas = alumnoRepository.saveAll(
