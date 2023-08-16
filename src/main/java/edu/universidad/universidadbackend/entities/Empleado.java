@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "empleados")
-@PrimaryKeyJoinColumn(name = "persona_id")   //Anotación para ponerle el nombre a la columna con la cual va a ser el join con la tabla
+@PrimaryKeyJoinColumn(name = "persona_id")   //Anotacineón para ponerle el nombre a la columna con la cual va a ser el join con la tabla
 public class Empleado extends Persona {
 
     private BigDecimal sueldo; //BigDecimal se recomienda para el manejo de monedas con decimales
