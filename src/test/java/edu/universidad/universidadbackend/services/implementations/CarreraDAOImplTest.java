@@ -5,6 +5,7 @@ import edu.universidad.universidadbackend.entities.Carrera;
 import edu.universidad.universidadbackend.repositories.CarreraRepository;
 import edu.universidad.universidadbackend.services.contracts.CarreraDAO;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -31,7 +32,8 @@ class CarreraDAOImplTest {
     }
 
     @Test
-    void findCarrerasByNombreContains() {
+    @DisplayName("Probando el método de buscar carreras por Nombre")
+    void testFindCarrerasByNombreContains() {
         //Given
         String nombre = "Ingenieria";
 
@@ -50,7 +52,8 @@ class CarreraDAOImplTest {
     }
 
     @Test
-    void findCarrerasByNombreContainsIgnoreCase() {
+    @DisplayName("Probando el método de buscar carreras por Nombre ignore sensitive")
+    void testCarrerasByNombreContainsIgnoreCase() {
 
         //Given
         String nombre = "ingeniería";
@@ -70,7 +73,8 @@ class CarreraDAOImplTest {
     }
 
     @Test
-    void findCarrerasByCantidadAniosAfter() {
+    @DisplayName("Probando el método de buscar carreras por canttdad de años")
+    void testFindCarrerasByCantidadAniosAfter() {
         //Given
         int cantidadAnios = 4;
 
@@ -89,8 +93,21 @@ class CarreraDAOImplTest {
     }
 
     @Test
-    void findCarrerasByProfesorNombreYApellido() {
+    @DisplayName("Probando el método de buscar carreras de profesor por nombre y apellido")
+    void testFindCarrerasByProfesorNombreYApellido() {
 
-        //terminat
+        //Given
+        String nombre = "Manolo";
+        String apellido = "Gaitan";
+
+        //Simular un llamado a la base de datos para traer los datos de carrera
+        when(carreraRepository.findCarrerasByProfesorNombreYApellido(nombre, apellido)).thenReturn(Arrays.asList(DataDummy.carrera01()));
+
+       //When
+        List<Carrera> expected = (List<Carrera>) carreraDAO.findCarrerasByProfesorNombreYApellido(nombre, apellido);
+
+        //Verify
+        verify(carreraRepository).findCarrerasByProfesorNombreYApellido(nombre, apellido);
+
     }
 }
