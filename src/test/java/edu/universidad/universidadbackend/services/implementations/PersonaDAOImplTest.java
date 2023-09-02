@@ -18,10 +18,12 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)  //Para extender de la clase de Mockito
 class PersonaDAOImplTest {
 
+    /*ENFOQUE UTILIZANDO JUNIT Y MOCKITO*/
+
     PersonaDAO personaDAO;
 
     @Mock  //Simulamos el AlumnoRepository con la anotación @Mock
-    AlumnoRepository alumnoRepository;
+    private AlumnoRepository alumnoRepository;
 
     @BeforeEach
     void setUp() {

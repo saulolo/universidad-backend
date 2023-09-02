@@ -1,9 +1,11 @@
 package edu.universidad.universidadbackend.data;
 
 import edu.universidad.universidadbackend.entities.*;
+import edu.universidad.universidadbackend.enums.Pizarron;
 import edu.universidad.universidadbackend.enums.TipoEmpleado;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import static edu.universidad.universidadbackend.enums.TipoEmpleado.ADMINISTRATIVO;
 import static edu.universidad.universidadbackend.enums.TipoEmpleado.MANTENIMIENTO;
@@ -65,6 +67,14 @@ public class DataDummy {
         return new Alumno();
     }
 
+
+    public static Aula aula01() {
+        return new Aula(null, 13, 50, 20, Pizarron.PIZARRA_BLANCA, LocalDateTime.now(), LocalDateTime.now());
+    }
+
+    public static Aula aula02() {
+        return new Aula(null, 14, 50, 25, Pizarron.PIZARRA_TIZA, LocalDateTime.now(), LocalDateTime.now());
+    }
 
 
 }

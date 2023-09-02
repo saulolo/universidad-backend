@@ -4,7 +4,6 @@ import edu.universidad.universidadbackend.entities.Aula;
 import edu.universidad.universidadbackend.enums.Pizarron;
 import edu.universidad.universidadbackend.repositories.AulaRepository;
 import edu.universidad.universidadbackend.services.contracts.AulaDAO;
-import edu.universidad.universidadbackend.services.contracts.PersonaDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

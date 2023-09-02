@@ -17,6 +17,8 @@ import static org.mockito.Mockito.*;
 
 class CarreraDAOImplTest {
 
+    /*ENFOQUE TRADICIONAL UTILIZANDO MOCKITO*/
+
 
     CarreraDAO carreraDAO;
 
