@@ -30,7 +30,7 @@ class AulaDAOImplTest {
     private AulaRepository aulaRepository;
 
     @InjectMocks  //3. Inyectar nuestro objeto simulado o mock a la clase o servicio que queremos testear (otra forma 3.1)
-    AulaDAOImpl aulaDAO;
+    AulaDAOImpl aulaDAOImpl;
 
 
 /*    @BeforeEach
@@ -54,7 +54,7 @@ class AulaDAOImplTest {
 
 
         //5. Llamar al método en el servicio
-        Iterable<Aula> expected = aulaDAO.findAulaByTipoPizarron(Pizarron.PIZARRA_BLANCA);
+        Iterable<Aula> expected = aulaDAOImpl.findAulaByTipoPizarron(Pizarron.PIZARRA_BLANCA);
 
         //6. Verificar que el método del repositorio fue llamado con los parámetros correctos
         verify(aulaRepository).findAulaByTipoPizarron(Pizarron.PIZARRA_BLANCA);
@@ -72,7 +72,7 @@ class AulaDAOImplTest {
         when(aulaRepository.findAulaByNombrePabellon(pabellon1)).thenReturn(expected);
 
         //When
-        Iterable<Aula> result = aulaDAO.findAulaByNombrePabellon(pabellon1);
+        Iterable<Aula> result = aulaDAOImpl.findAulaByNombrePabellon(pabellon1);
 
         //Then
         verify(aulaRepository).findAulaByNombrePabellon(pabellon1);
@@ -87,11 +87,11 @@ class AulaDAOImplTest {
         int nroAula = 1;
         Aula expectedAula = DataDummy.aula01();
 
-        //Configurando When
+        //CConfigurar el comportamiento del repositorio
         when(aulaRepository.findAulaByNroAula(nroAula)).thenReturn(expectedAula);
 
         //When
-        Aula result = aulaDAO.findAulaByNumero(nroAula);
+        Aula result = aulaDAOImpl.findAulaByNumero(nroAula);
 
         //Then
         verify(aulaRepository, times(1)).findAulaByNroAula(nroAula);

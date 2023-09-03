@@ -20,7 +20,6 @@ public class GenericDAOImpl <E, R extends JpaRepository<E, Long>> implements Gen
     }
 
 
-
     //Establecemos los métodos genericos los cuales generaran nuestros hijos DAOIml
     @Override                     //Implementamos de CarreraDAO y hacemos Override de todos los métodos
     @Transactional(readOnly = true)  //Esto significa que el método solo leerá datos de la base de datos y no realizará ninguna operación de escritura o modificación de datos mejora el rendimiento de la BD
