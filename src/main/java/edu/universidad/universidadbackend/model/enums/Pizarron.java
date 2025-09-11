@@ -1,4 +1,4 @@
-package edu.universidad.universidadbackend.enums;
+package edu.universidad.universidadbackend.model.enums;
 
 public enum Pizarron {
 

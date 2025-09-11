@@ -1,11 +1,8 @@
 package edu.universidad.universidadbackend.services.implementations;
 
 import edu.universidad.universidadbackend.data.DataDummy;
-import edu.universidad.universidadbackend.entities.Carrera;
-import edu.universidad.universidadbackend.entities.Persona;
-import edu.universidad.universidadbackend.entities.Profesor;
+import edu.universidad.universidadbackend.model.entities.Persona;
 import edu.universidad.universidadbackend.repositories.ProfesorRepository;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,8 +11,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Collections;
-import java.util.List;
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -51,11 +46,6 @@ class ProfesorDAOImplTest {
         assertEquals(expectedProfesor, result);
         verify(profesorRepository, times(1)).findProfesoresByCarrera(carrera);
         assertNull(result);
-
-
-
-
-
 
     }
 }

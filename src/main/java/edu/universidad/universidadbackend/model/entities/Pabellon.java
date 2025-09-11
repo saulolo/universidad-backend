@@ -1,4 +1,4 @@
-package edu.universidad.universidadbackend.entities;
+package edu.universidad.universidadbackend.model.entities;
 
 import jakarta.persistence.*;
 

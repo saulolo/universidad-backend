@@ -1,4 +1,4 @@
-package edu.universidad.universidadbackend.entities;
+package edu.universidad.universidadbackend.model.entities;
 
 import jakarta.persistence.*;
 
@@ -31,24 +31,15 @@ public class Carrera implements Serializable {
     @Column(name = "fecha_modificacion")
     private LocalDateTime fechaModificacion;
 
-    @OneToMany(
-            mappedBy = "carrera",
-            fetch = FetchType.LAZY
-    )
+    @OneToMany(mappedBy = "carrera", fetch = FetchType.LAZY)
     private Set<Alumno> alumnos;
 
-    @ManyToMany(
-            mappedBy = "carreras",
-            fetch = FetchType.LAZY
-
-    )
+    @ManyToMany(mappedBy = "carreras", fetch = FetchType.LAZY)
     private Set<Profesor> profesores;
-
 
 
     public Carrera() {
     }
-
 
     public Carrera(Long id, String nombre, Integer cantidadMaterias, Integer cantidadAnios) {
         this.id = id;

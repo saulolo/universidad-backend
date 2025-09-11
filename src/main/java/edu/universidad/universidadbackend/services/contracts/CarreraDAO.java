@@ -1,8 +1,6 @@
 package edu.universidad.universidadbackend.services.contracts;
 
-import edu.universidad.universidadbackend.entities.Carrera;
-
-import java.util.Optional;
+import edu.universidad.universidadbackend.model.entities.Carrera;
 
 
 //Extendemos los métodos de GenericDAD y le pasamos Carrera que es nuestra entidad que manejara dicho DAO generico

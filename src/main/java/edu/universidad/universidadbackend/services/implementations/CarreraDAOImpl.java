@@ -1,6 +1,6 @@
 package edu.universidad.universidadbackend.services.implementations;
 
-import edu.universidad.universidadbackend.entities.Carrera;
+import edu.universidad.universidadbackend.model.entities.Carrera;
 import edu.universidad.universidadbackend.repositories.CarreraRepository;
 import edu.universidad.universidadbackend.services.contracts.CarreraDAO;
 import org.springframework.beans.factory.annotation.Autowired;

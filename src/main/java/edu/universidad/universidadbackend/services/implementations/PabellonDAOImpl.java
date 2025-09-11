@@ -1,6 +1,6 @@
 package edu.universidad.universidadbackend.services.implementations;
 
-import edu.universidad.universidadbackend.entities.Pabellon;
+import edu.universidad.universidadbackend.model.entities.Pabellon;
 import edu.universidad.universidadbackend.repositories.PabellonRepository;
 import edu.universidad.universidadbackend.services.contracts.PabellonDAO;
 import org.springframework.beans.factory.annotation.Autowired;

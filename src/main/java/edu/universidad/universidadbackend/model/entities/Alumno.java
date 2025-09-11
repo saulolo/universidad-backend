@@ -1,4 +1,4 @@
-package edu.universidad.universidadbackend.entities;
+package edu.universidad.universidadbackend.model.entities;
 
 import jakarta.persistence.*;
 
@@ -10,12 +10,8 @@ public class Alumno extends Persona { //Le ponemos extends para indicar que esta
 
 
 
-    @ManyToOne(
-            optional = true,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            },
+    @ManyToOne(optional = true, cascade =
+            {CascadeType.PERSIST, CascadeType.MERGE},
             fetch = FetchType.LAZY
     )
     @JoinColumn(name = "carrera_id")

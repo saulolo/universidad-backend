@@ -1,14 +1,20 @@
 package edu.universidad.universidadbackend.data;
 
 import edu.universidad.universidadbackend.entities.*;
-import edu.universidad.universidadbackend.enums.Pizarron;
-import edu.universidad.universidadbackend.enums.TipoEmpleado;
+import edu.universidad.universidadbackend.model.enums.Pizarron;
+import edu.universidad.universidadbackend.model.entities.Alumno;
+import edu.universidad.universidadbackend.model.entities.Aula;
+import edu.universidad.universidadbackend.model.entities.Carrera;
+import edu.universidad.universidadbackend.model.entities.Direccion;
+import edu.universidad.universidadbackend.model.entities.Empleado;
+import edu.universidad.universidadbackend.model.entities.Persona;
+import edu.universidad.universidadbackend.model.entities.Profesor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import static edu.universidad.universidadbackend.enums.TipoEmpleado.ADMINISTRATIVO;
-import static edu.universidad.universidadbackend.enums.TipoEmpleado.MANTENIMIENTO;
+import static edu.universidad.universidadbackend.model.enums.TipoEmpleado.ADMINISTRATIVO;
+import static edu.universidad.universidadbackend.model.enums.TipoEmpleado.MANTENIMIENTO;
 
 
 public class DataDummy {

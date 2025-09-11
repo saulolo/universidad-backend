@@ -1,7 +1,7 @@
 package edu.universidad.universidadbackend.services.implementations;
 
-import edu.universidad.universidadbackend.entities.Aula;
-import edu.universidad.universidadbackend.enums.Pizarron;
+import edu.universidad.universidadbackend.model.entities.Aula;
+import edu.universidad.universidadbackend.model.enums.Pizarron;
 import edu.universidad.universidadbackend.repositories.AulaRepository;
 import edu.universidad.universidadbackend.services.contracts.AulaDAO;
 import org.springframework.beans.factory.annotation.Autowired;

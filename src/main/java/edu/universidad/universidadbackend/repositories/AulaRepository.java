@@ -1,9 +1,7 @@
 package edu.universidad.universidadbackend.repositories;
 
-import edu.universidad.universidadbackend.entities.Aula;
-import edu.universidad.universidadbackend.entities.Pabellon;
-import edu.universidad.universidadbackend.entities.Persona;
-import edu.universidad.universidadbackend.enums.Pizarron;
+import edu.universidad.universidadbackend.model.entities.Aula;
+import edu.universidad.universidadbackend.model.enums.Pizarron;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

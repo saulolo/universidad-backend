@@ -1,6 +1,6 @@
 package edu.universidad.universidadbackend.repositories;
 
-import edu.universidad.universidadbackend.entities.Persona;
+import edu.universidad.universidadbackend.model.entities.Persona;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 

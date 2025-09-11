@@ -1,8 +1,8 @@
 package edu.universidad.universidadbackend.services.implementations;
 
 import edu.universidad.universidadbackend.data.DataDummy;
-import edu.universidad.universidadbackend.entities.Aula;
-import edu.universidad.universidadbackend.enums.Pizarron;
+import edu.universidad.universidadbackend.model.entities.Aula;
+import edu.universidad.universidadbackend.model.enums.Pizarron;
 import edu.universidad.universidadbackend.repositories.AulaRepository;
 
 import org.junit.jupiter.api.DisplayName;

@@ -1,7 +1,7 @@
-package edu.universidad.universidadbackend.entities;
+package edu.universidad.universidadbackend.model.entities;
 
 
-import edu.universidad.universidadbackend.enums.TipoEmpleado;
+import edu.universidad.universidadbackend.model.enums.TipoEmpleado;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -23,7 +23,7 @@ public class Empleado extends Persona {
     )
     @JoinColumn(
             name = "pabellon_id",
-            foreignKey = @ForeignKey(name = "FK_PABELLON_ID")
+            foreignKey = @ForeignKey(name = "fk_pabellon_id")
     )
     private Pabellon pabellon;
 
@@ -63,7 +63,7 @@ public class Empleado extends Persona {
 
     @Override
     public String toString() {
-        return super.toString() +   //Hacemos un super de la clase padre para tambien obtener el toString de Persona y tabulsmod (/t)
+        return super.toString() +
                 "\tEmpleado{" +
                 "sueldo=" + sueldo +
                 ", tipoEmpleado=" + tipoEmpleado +

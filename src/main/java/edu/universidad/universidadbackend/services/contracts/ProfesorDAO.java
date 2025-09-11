@@ -1,7 +1,6 @@
 package edu.universidad.universidadbackend.services.contracts;
 
-import edu.universidad.universidadbackend.entities.Persona;
-import edu.universidad.universidadbackend.entities.Profesor;
+import edu.universidad.universidadbackend.model.entities.Persona;
 
 public interface ProfesorDAO extends PersonaDAO {
 

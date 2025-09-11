@@ -1,8 +1,8 @@
 package edu.universidad.universidadbackend.repositories;
 
 import edu.universidad.universidadbackend.data.DataDummy;
-import edu.universidad.universidadbackend.entities.Carrera;
-import edu.universidad.universidadbackend.entities.Profesor;
+import edu.universidad.universidadbackend.model.entities.Carrera;
+import edu.universidad.universidadbackend.model.entities.Profesor;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

@@ -1,6 +1,6 @@
-package edu.universidad.universidadbackend.entities;
+package edu.universidad.universidadbackend.model.entities;
 
-import edu.universidad.universidadbackend.enums.Pizarron;
+import edu.universidad.universidadbackend.model.enums.Pizarron;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -48,7 +48,7 @@ public class Aula implements Serializable {
     )
     @JoinColumn(
             name = "pabellon_id",
-            foreignKey = @ForeignKey(name = "FK_PABELLON_ID")
+            foreignKey = @ForeignKey(name = "fk_pabellon_id")
     )
     private Pabellon pabellon;
 

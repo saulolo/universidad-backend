@@ -1,7 +1,7 @@
 package edu.universidad.universidadbackend.services.implementations;
 
 import edu.universidad.universidadbackend.data.DataDummy;
-import edu.universidad.universidadbackend.entities.Carrera;
+import edu.universidad.universidadbackend.model.entities.Carrera;
 import edu.universidad.universidadbackend.repositories.CarreraRepository;
 import edu.universidad.universidadbackend.services.contracts.CarreraDAO;
 import org.junit.jupiter.api.BeforeEach;

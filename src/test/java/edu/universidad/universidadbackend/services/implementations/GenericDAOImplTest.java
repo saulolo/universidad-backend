@@ -1,7 +1,7 @@
 package edu.universidad.universidadbackend.services.implementations;
 
 import edu.universidad.universidadbackend.data.DataDummy;
-import edu.universidad.universidadbackend.entities.Persona;
+import edu.universidad.universidadbackend.model.entities.Persona;
 import edu.universidad.universidadbackend.repositories.PersonaRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

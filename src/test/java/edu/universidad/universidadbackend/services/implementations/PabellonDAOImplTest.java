@@ -1,7 +1,7 @@
 package edu.universidad.universidadbackend.services.implementations;
 
 import edu.universidad.universidadbackend.data.DataDummy;
-import edu.universidad.universidadbackend.entities.Pabellon;
+import edu.universidad.universidadbackend.model.entities.Pabellon;
 import edu.universidad.universidadbackend.repositories.PabellonRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
