@@ -1,8 +1,8 @@
-package edu.universidad.universidadbackend.services.contracts;
+package edu.universidad.universidadbackend.services.Interfaces;
 
 import edu.universidad.universidadbackend.model.entities.Pabellon;
 
-public interface PabellonDAO extends GenericDAO<Pabellon>{
+public interface PabellonServiceI extends IGenericService<Pabellon> {
 
 
     Iterable<Pabellon> findPabellonByLocalidad(String localidadPabellon);

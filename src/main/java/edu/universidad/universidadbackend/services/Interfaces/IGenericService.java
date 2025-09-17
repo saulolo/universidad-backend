@@ -1,19 +1,19 @@
-package edu.universidad.universidadbackend.services.contracts;
+package edu.universidad.universidadbackend.services.Interfaces;
 
 
 import java.util.Optional;
 
 //Generamos una entidad generica DAO para poner los métodos generales de los servicios
 //le pasamos la E de entidad
-public interface GenericDAO<E> {
+public interface IGenericService<E> {
 
     /*
-    El patrón DAO: nos ayuda a separar la lógica de negocio de la lógica de acceso a datos, lo que facilita
+    El patrón MVC: nos ayuda a separar la lógica de negocio de la lógica de acceso a datos, lo que facilita
     la mantenibilidad y la escalabilidad de la aplicación. Además, proporciona una abstracción que nos permite
     cambiar la capa de persistencia sin afectar el resto del código.
 
-    Nota: Orden de generación: 1. se genera los Contracts/DAO, en este caso el CarreraDAO,AlumnoDAO, etc
-    y por segundo se generan los implementations//DAOImpl, e neste caso CarreraDAOImpl,AlumnoDAOImpl, r
+    Nota: Orden de generación: 1. se genera los Contratos: Interfaces, en este caso el CarreraServiceImpl,AlumnoServiceImpl, etc
+    y por segundo se generan los implementations//ServiceImpl, en este caso CarreraServiceImpl,AlumnoServiceImpl, r
 */
 
     //En general, el uso de Optional es una buena práctica en Java para mejorar la legibilidad, evitar errores
@@ -36,20 +36,36 @@ public interface GenericDAO<E> {
     // carga perezosa para manejar y procesar conjuntos de datos de manera eficiente.
 
 
-
-
-    /* -- VER TODAS LAS CARRERAS -- */
+    /**
+     * Recupera todas las entidades del tipo E.
+     *
+     * @return Un Iterable con todas las entidades.
+     */
     Iterable<E> findAll();
 
 
-    /* -- VER CARRERAS POR ID -- */
+    /**
+     * Recupera una entidad por su ID.
+     *
+     * @param id El ID de la entidad a buscar.
+     * @return Un Optional que puede contener la entidad si se encuentra.
+     */
     Optional<E> findById(Long id);
 
 
-    /* -- GUARDAR CARRERAS -- */
+    /**
+     * Guarda una entidad en la base de datos.
+     *
+     * @param entidad La entidad a guardar.
+     * @return La entidad guardada, que incluye el ID generado.
+     */
     E save(E entidad);
 
 
-    /* -- ELIMINAR CARRERAS POR ID -- */
+    /**
+     * Elimina una entidad por su ID.
+     *
+     * @param id El ID de la entidad a eliminar.
+     */
     void deleteById(Long id);
 }

@@ -10,12 +10,6 @@
 	</parent>
 	<groupId>edu.universidad</groupId>
 	<artifactId>universidad-backend</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Universidad Backend</name>
-	<description>Proyecto curso Udemy Spring Boot en Simples Pasos</description>
-	<properties>
-		<java.version>17</java.version>
-	</properties>
 
 	<dependencies>
 		<dependency>
@@ -34,36 +28,22 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>xerces</groupId>
 			<artifactId>xercesImpl</artifactId>
 			<version>2.12.2</version>
 		</dependency>
 
-		<!--junit.jupiter-->
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<version>5.8.0</version>
-			<scope>test</scope>
-		</dependency>
-
-		<!--mockito-->
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>3.12.4</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-
 	</dependencies>
+
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Universidad Backend</name>
+	<description>Proyecto curso Udemy Spring Boot en Simples Pasos</description>
+
+	<properties>
+		<java.version>17</java.version>
+	</properties>
 
 
 	<build>

@@ -1,4 +1,4 @@
-package edu.universidad.universidadbackend.services.implementations;
+package edu.universidad.universidadbackend.services.impl;
 
 import edu.universidad.universidadbackend.data.DataDummy;
 import edu.universidad.universidadbackend.model.entities.Persona;
@@ -23,7 +23,7 @@ class EmpleadoDAOImplTest {
 
 
     @InjectMocks
-    private EmpleadoDAOImpl empleadoDAOImpl  ;
+    private EmpleadoServiceImpl empleadoDAOImpl  ;
 
 
     @Mock

@@ -1,11 +1,8 @@
-package edu.universidad.universidadbackend.repositories;
+package edu.universidad.universidadbackend.services.Interfaces;
 
 import edu.universidad.universidadbackend.model.entities.Persona;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface ProfesorRepository extends PersonaRepository {
+public interface IProfesorService extends IPersonaService {
 
     /**
      * Busca una lista de profesores por el nombre de la carrera a la que están asociados.
@@ -13,6 +10,6 @@ public interface ProfesorRepository extends PersonaRepository {
      * @param carrera El nombre de la carrera a buscar.
      * @return Un Iterable de objetos Persona que representan a los profesores encontrados.
      */
-    @Query("select p from Profesor p join fetch p.carreras c where c.nombre = ?1")
     Iterable<Persona> findProfesoresByCarrera(String carrera);
+
 }

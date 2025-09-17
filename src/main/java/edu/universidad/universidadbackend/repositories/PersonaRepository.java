@@ -15,17 +15,37 @@ Es una forma de reutilizar lógica de repositorio común sin crear un repositori
 @NoRepositoryBean
 public interface PersonaRepository extends JpaRepository<Persona, Long> {
 
-                            /*BUSQUEDAS DE JPQL*/
-
-    //Buscar por nombre y apellido (a travez de Query nativas)
+    /**
+     * Busca una persona por su nombre y apellido.
+     * <br>
+     * Se utiliza una consulta JPQL personalizada.
+     *
+     * @param nombre El nombre de la persona.
+     * @param apellido El apellido de la persona.
+     * @return Un objeto Optional que puede contener la persona si se encuentra.
+     */
     @Query("select p from Persona p where p.nombre = ?1 and p.apellido = ?2")
     Optional<Persona> findByNombreYApellido(String nombre, String apellido);
 
-    //Buscar por Dni (a travez de Query nativas)
+    /**
+     * Busca una persona por su número de DNI.
+     * <br>
+     * Se utiliza una consulta JPQL personalizada.
+     *
+     * @param dni El número de DNI de la persona.
+     * @return Un objeto Optional que puede contener la persona si se encuentra.
+     */
     @Query("select p from Persona p where p.dni = ?1")
     Optional<Persona> findByDni(String dni);
 
-    //Buscar personas por apellido  //like % (es para que encuentre las coincidencias) (a travez de Query nativas)
+    /**
+     * Busca un listado de personas cuyo apellido contenga el string proporcionado.
+     * <br>
+     * Se utiliza una consulta JPQL personalizada.
+     *
+     * @param apellido El apellido o parte del apellido a buscar.
+     * @return Un Iterable de objetos Persona que cumplen con el criterio.
+     */
     @Query("select p from Persona p where p.apellido like %?1%")
     Iterable<Persona> findPersonaByApellido(String apellido);
 }

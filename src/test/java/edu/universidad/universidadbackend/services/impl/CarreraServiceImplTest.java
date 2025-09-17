@@ -1,9 +1,9 @@
-package edu.universidad.universidadbackend.services.implementations;
+package edu.universidad.universidadbackend.services.impl;
 
 import edu.universidad.universidadbackend.data.DataDummy;
 import edu.universidad.universidadbackend.model.entities.Carrera;
 import edu.universidad.universidadbackend.repositories.CarreraRepository;
-import edu.universidad.universidadbackend.services.contracts.CarreraDAO;
+import edu.universidad.universidadbackend.services.Interfaces.ICarreraService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,12 +15,12 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.*;
 
 
-class CarreraDAOImplTest {
+class CarreraServiceImplTest {
 
     /*ENFOQUE TRADICIONAL UTILIZANDO MOCKITO*/
 
 
-    CarreraDAO carreraDAO;
+    ICarreraService ICarreraService;
 
 
     CarreraRepository carreraRepository;
@@ -30,7 +30,7 @@ class CarreraDAOImplTest {
     @BeforeEach
     void setUp() {
         carreraRepository = mock(CarreraRepository.class);
-        carreraDAO = new CarreraDAOImpl(carreraRepository);
+        ICarreraService = new CarreraServiceImpl(carreraRepository);
     }
 
     @Test
@@ -43,7 +43,7 @@ class CarreraDAOImplTest {
         when(carreraRepository.findCarrerasByNombreContains(nombre)).thenReturn(Arrays.asList(DataDummy.carrera01(), DataDummy.carrera02()));
 
         //When
-        List<Carrera> expected = (List<Carrera>) carreraDAO.findCarrerasByNombreContains(nombre);
+        List<Carrera> expected = (List<Carrera>) ICarreraService.findCarrerasByNombreContains(nombre);
 
         //Then
         assertThat(expected.get(0)).isEqualTo(DataDummy.carrera01());
@@ -64,7 +64,7 @@ class CarreraDAOImplTest {
         when(carreraRepository.findCarrerasByNombreContainsIgnoreCase(nombre)).thenReturn(Arrays.asList(DataDummy.carrera02()));
 
         //When
-        List<Carrera> expected = (List<Carrera>) carreraDAO.findCarrerasByNombreContainsIgnoreCase(nombre);
+        List<Carrera> expected = (List<Carrera>) ICarreraService.findCarrerasByNombreContainsIgnoreCase(nombre);
 
         //Then
         assertThat(expected.get(0)).isEqualTo(DataDummy.carrera02());
@@ -84,7 +84,7 @@ class CarreraDAOImplTest {
         when(carreraRepository.findCarrerasByCantidadAniosAfter(cantidadAnios)).thenReturn(Arrays.asList(DataDummy.carrera01(), DataDummy.carrera03()));
 
         //When
-        List<Carrera> expected = (List<Carrera>) carreraDAO.findCarrerasByCantidadAniosAfter(cantidadAnios);
+        List<Carrera> expected = (List<Carrera>) ICarreraService.findCarrerasByCantidadAniosAfter(cantidadAnios);
 
         //Then
         assertThat(expected.get(0)).isEqualTo(DataDummy.carrera01());
@@ -106,7 +106,7 @@ class CarreraDAOImplTest {
         when(carreraRepository.findCarrerasByProfesorNombreYApellido(nombre, apellido)).thenReturn(Arrays.asList(DataDummy.carrera01()));
 
        //When
-        List<Carrera> expected = (List<Carrera>) carreraDAO.findCarrerasByProfesorNombreYApellido(nombre, apellido);
+        List<Carrera> expected = (List<Carrera>) ICarreraService.findCarrerasByProfesorNombreYApellido(nombre, apellido);
 
         //Verify
         verify(carreraRepository).findCarrerasByProfesorNombreYApellido(nombre, apellido);

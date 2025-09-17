@@ -1,4 +1,4 @@
-package edu.universidad.universidadbackend.services.implementations;
+package edu.universidad.universidadbackend.services.impl;
 
 import edu.universidad.universidadbackend.data.DataDummy;
 import edu.universidad.universidadbackend.model.entities.Persona;
@@ -20,11 +20,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class GenericDAOImplTest {
+class GenericServiceImplTest {
 
 
     @InjectMocks
-    private GenericDAOImpl<Persona, PersonaRepository> genericDAOImpl;
+    private GenericServiceImpl<Persona, PersonaRepository> genericDAOImpl;
 
     @Mock
     private PersonaRepository personaRepository;

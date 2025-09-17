@@ -1,4 +1,4 @@
-package edu.universidad.universidadbackend.services.implementations;
+package edu.universidad.universidadbackend.services.impl;
 
 import edu.universidad.universidadbackend.data.DataDummy;
 import edu.universidad.universidadbackend.model.entities.Aula;
@@ -20,7 +20,7 @@ import static org.mockito.Mockito.*;
 
 
 @ExtendWith(MockitoExtension.class) //1.Decirle a la calse Test que vamos a utilizar mockito
-class AulaDAOImplTest {
+class AulaServiceImplTest {
 
     /*ENFOQUE UTILIZANDO JUNIT Y MOCKITO*/
     /*Método: Given (Dado) - When (Cuando) - Then (Entonces)*/
@@ -30,7 +30,7 @@ class AulaDAOImplTest {
     private AulaRepository aulaRepository;
 
     @InjectMocks  //3. Inyectar nuestro objeto simulado o mock a la clase o servicio que queremos testear (otra forma 3.1)
-    AulaDAOImpl aulaDAOImpl;
+    AulaServiceImpl aulaDAOImpl;
 
 
 /*    @BeforeEach

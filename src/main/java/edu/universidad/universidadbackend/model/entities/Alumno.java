@@ -9,9 +9,11 @@ public class Alumno extends Persona { //Le ponemos extends para indicar que esta
     // clase Persona y la clase heredada no es necesario que la serialicemos
 
 
-
-    @ManyToOne(optional = true, cascade =
-            {CascadeType.PERSIST, CascadeType.MERGE},
+    @ManyToOne(optional = true,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },
             fetch = FetchType.LAZY
     )
     @JoinColumn(name = "carrera_id")

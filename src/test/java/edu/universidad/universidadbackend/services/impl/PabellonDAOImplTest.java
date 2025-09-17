@@ -1,4 +1,4 @@
-package edu.universidad.universidadbackend.services.implementations;
+package edu.universidad.universidadbackend.services.impl;
 
 import edu.universidad.universidadbackend.data.DataDummy;
 import edu.universidad.universidadbackend.model.entities.Pabellon;
@@ -22,7 +22,7 @@ import static org.mockito.Mockito.*;
 class PabellonDAOImplTest {
 
     @InjectMocks
-    private PabellonDAOImpl pabellonDAOImpl;
+    private PabellonServiceImpl pabellonDAOImpl;
 
     @Mock
     private PabellonRepository pabellonRepository;

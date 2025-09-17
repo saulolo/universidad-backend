@@ -1,19 +1,19 @@
-package edu.universidad.universidadbackend.services.implementations;
+package edu.universidad.universidadbackend.services.impl;
 
 import edu.universidad.universidadbackend.model.entities.Pabellon;
 import edu.universidad.universidadbackend.repositories.PabellonRepository;
-import edu.universidad.universidadbackend.services.contracts.PabellonDAO;
+import edu.universidad.universidadbackend.services.Interfaces.PabellonServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
 @Service
-public class PabellonDAOImpl extends GenericDAOImpl <Pabellon, PabellonRepository> implements PabellonDAO {
+public class PabellonServiceImpl extends GenericServiceImpl<Pabellon, PabellonRepository> implements PabellonServiceI {
 
 
     @Autowired
-    public PabellonDAOImpl(PabellonRepository repository) {
+    public PabellonServiceImpl(PabellonRepository repository) {
         super(repository);
     }
 

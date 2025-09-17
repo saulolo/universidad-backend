@@ -1,20 +1,20 @@
-package edu.universidad.universidadbackend.services.implementations;
+package edu.universidad.universidadbackend.services.impl;
 
 import edu.universidad.universidadbackend.model.entities.Aula;
 import edu.universidad.universidadbackend.model.enums.Pizarron;
 import edu.universidad.universidadbackend.repositories.AulaRepository;
-import edu.universidad.universidadbackend.services.contracts.AulaDAO;
+import edu.universidad.universidadbackend.services.Interfaces.IAulaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
 @Service
-public class AulaDAOImpl extends GenericDAOImpl<Aula, AulaRepository> implements AulaDAO {
+public class AulaServiceImpl extends GenericServiceImpl<Aula, AulaRepository> implements IAulaService {
 
 
     @Autowired
-    public AulaDAOImpl(AulaRepository repository) {
+    public AulaServiceImpl(AulaRepository repository) {
         super(repository);
     }
 

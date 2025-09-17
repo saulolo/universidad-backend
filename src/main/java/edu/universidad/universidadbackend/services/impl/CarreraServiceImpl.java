@@ -1,8 +1,8 @@
-package edu.universidad.universidadbackend.services.implementations;
+package edu.universidad.universidadbackend.services.impl;
 
 import edu.universidad.universidadbackend.model.entities.Carrera;
 import edu.universidad.universidadbackend.repositories.CarreraRepository;
-import edu.universidad.universidadbackend.services.contracts.CarreraDAO;
+import edu.universidad.universidadbackend.services.Interfaces.ICarreraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,10 +11,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Transactional //Como este servicio trabaja con transacciones contra BD, debemos de decorarlos con esta anotación, y que derive de SpringFramework y no de jakarta
 @Service
-public class CarreraDAOImpl extends GenericDAOImpl <Carrera, CarreraRepository> implements CarreraDAO  {
+public class CarreraServiceImpl extends GenericServiceImpl<Carrera, CarreraRepository> implements ICarreraService {
 
     @Autowired
-    public CarreraDAOImpl(CarreraRepository repository) {
+    public CarreraServiceImpl(CarreraRepository repository) {
         super(repository);  //implementamos lo metodos del constructor padre
     }
 

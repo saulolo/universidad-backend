@@ -1,9 +1,9 @@
-package edu.universidad.universidadbackend.services.contracts;
+package edu.universidad.universidadbackend.services.Interfaces;
 
 import edu.universidad.universidadbackend.model.entities.Aula;
 import edu.universidad.universidadbackend.model.enums.Pizarron;
 
-public interface AulaDAO extends GenericDAO<Aula>{
+public interface IAulaService extends IGenericService<Aula> {
 
 
 

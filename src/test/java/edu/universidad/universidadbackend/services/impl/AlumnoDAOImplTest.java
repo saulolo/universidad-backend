@@ -1,7 +1,7 @@
-package edu.universidad.universidadbackend.services.implementations;
+package edu.universidad.universidadbackend.services.impl;
 
 import edu.universidad.universidadbackend.repositories.AlumnoRepository;
-import edu.universidad.universidadbackend.services.contracts.AlumnoDAO;
+import edu.universidad.universidadbackend.services.Interfaces.IAlumnoService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ class AlumnoDAOImplTest {
     AlumnoRepository alumnoRepository;
 
     @Autowired
-    AlumnoDAO alumnoDAO;
+    IAlumnoService alumnoDAO;
 
 
     @Test

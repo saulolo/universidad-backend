@@ -1,14 +1,12 @@
-package edu.universidad.universidadbackend.repositories;
+package edu.universidad.universidadbackend.services.Interfaces;
 
 import edu.universidad.universidadbackend.model.entities.Carrera;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface CarreraRepository extends JpaRepository<Carrera, Long> {
 
-    //@Query("select c from Carrera c where c.nombre like %?1%") ==> son equivalentes
+//Extendemos los métodos de GenericDAD y le pasamos Carrera que es nuestra entidad que manejara dicho DAO generico
+public interface ICarreraService extends IGenericService<Carrera> {
+
+
     /**
      * Busca una lista de carreras cuyo nombre contenga el string proporcionado.
      * <br>
@@ -19,8 +17,6 @@ public interface CarreraRepository extends JpaRepository<Carrera, Long> {
      */
     Iterable<Carrera> findCarrerasByNombreContains(String nombre);
 
-    //El mismo metodo que el anterior pero ignorando mayusculas y minusculas
-    //@Query("select c from Carrera c where upper(c.nombre) like upper(%?1%)") ==> son equivalentes
     /**
      * Busca una lista de carreras cuyo nombre contenga el string proporcionado, ignorando mayúsculas y minúsculas.
      *
@@ -29,7 +25,6 @@ public interface CarreraRepository extends JpaRepository<Carrera, Long> {
      */
     Iterable<Carrera> findCarrerasByNombreContainsIgnoreCase(String nombre);
 
-    //@Query("select c from Carrera c where c.cantidadAnios > ?1") ==> son equivalentes
     /**
      * Busca una lista de carreras que tienen una cantidad de años mayor a la especificada.
      *
@@ -37,7 +32,6 @@ public interface CarreraRepository extends JpaRepository<Carrera, Long> {
      * @return Un iterable de objetos Carrera que cumplen con el criterio.
      */
     Iterable<Carrera> findCarrerasByCantidadAniosAfter(Integer cantidadAnios);
-
 
     /**
      * Busca una lista de carreras asociadas a un profesor por su nombre y apellido.
@@ -48,17 +42,10 @@ public interface CarreraRepository extends JpaRepository<Carrera, Long> {
      * @param apellido El apellido del profesor.
      * @return Un iterable de objetos Carrera asociados al profesor.
      */
-    @Query("select c from Carrera c join c.profesores p where p.nombre = ?1 and p.apellido = ?2")
     Iterable<Carrera> findCarrerasByProfesorNombreYApellido(String nombre, String apellido);
 
-    /*
-     * 💡 Sugerencia: Para evitar la ambigüedad en los parámetros posicionales (?1, ?2),
-     * es una buena práctica utilizar parámetros nombrados con la anotación @Param.
-     *
-     * @Query("select c from Carrera c join c.profesores p where p.nombre = :nombre and p.apellido = :apellido")
-     * Iterable<Carrera> findCarrerasByProfesorNombreYApellido(@Param("nombre") String nombre, @Param("apellido") String apellido);
-     *
-     */
+
+
 
 
 }
