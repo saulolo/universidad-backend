@@ -2,14 +2,14 @@ package edu.universidad.universidadbackend.services.impl;
 
 import edu.universidad.universidadbackend.model.entities.Pabellon;
 import edu.universidad.universidadbackend.repositories.PabellonRepository;
-import edu.universidad.universidadbackend.services.Interfaces.PabellonServiceI;
+import edu.universidad.universidadbackend.services.Interfaces.IPabellonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
 @Service
-public class PabellonServiceImpl extends GenericServiceImpl<Pabellon, PabellonRepository> implements PabellonServiceI {
+public class PabellonServiceImpl extends GenericServiceImpl<Pabellon, PabellonRepository> implements IPabellonService {
 
 
     @Autowired

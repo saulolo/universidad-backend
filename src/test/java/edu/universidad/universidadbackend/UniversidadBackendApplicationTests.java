@@ -33,7 +33,7 @@ class UniversidadBackendApplicationTests {
 
 	@Test
 	@DisplayName("Test deprecado")
-	@Disabled("Test deprecado") //Apara indicar que este test esta desactivado
+	@Disabled("Test deprecado") //Para indicar que este test esta desactivado
 	void testDesactivado() {
 
 	}

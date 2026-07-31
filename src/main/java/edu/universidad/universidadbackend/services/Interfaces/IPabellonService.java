@@ -2,7 +2,7 @@ package edu.universidad.universidadbackend.services.Interfaces;
 
 import edu.universidad.universidadbackend.model.entities.Pabellon;
 
-public interface PabellonServiceI extends IGenericService<Pabellon> {
+public interface IPabellonService extends IGenericService<Pabellon> {
 
 
     Iterable<Pabellon> findPabellonByLocalidad(String localidadPabellon);
